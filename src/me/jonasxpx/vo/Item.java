@@ -2,6 +2,8 @@ package me.jonasxpx.vo;
 
 import java.math.BigDecimal;
 
+import javax.annotation.Nullable;
+
 import org.bukkit.entity.Player;
 
 import br.com.uol.pagseguro.domain.checkout.Checkout;
@@ -44,15 +46,15 @@ public class Item {
 		return visivel;
 	}
 	
-	public void solicitar(final Player player){
-			new Thread(new Runnable() {
-				
+	
+	public void solicitar(final Player player,  final int quantia){
+		new Thread(new Runnable() {
 				@Override
 				public void run() {
 					Checkout checkout = new Checkout();
 					checkout.addItem(id, 
 							descriçao +" - APELIDO: " + player.getName(), 
-							1, 
+							quantia, 
 							new BigDecimal(valor), 0L, new BigDecimal("0.00"));
 					checkout.setCurrency(Currency.BRL);
 				    try {  
