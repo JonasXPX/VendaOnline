@@ -11,7 +11,8 @@ public class Commands implements CommandExecutor{
 	@Override
 	public boolean onCommand(CommandSender sender, Command arg1, String arg2, String[] args) {
 		if(args.length == 0){
-			sender.sendMessage("§b * Veja os produtos abaixo, para comprar use /comprar <ID>");
+			sender.sendMessage("§b * Para comprar use /comprar <ID> [quantia]");
+			sender.sendMessage("§7 * <> = Obrigatório | [] = Opcional");
 			for(String products : Manager.listProducts()){
 				sender.sendMessage(products);
 			}
@@ -22,11 +23,11 @@ public class Commands implements CommandExecutor{
 					sender.sendMessage("§cProduto não encontrado");
 					return true;
 				}
-				Manager.itens.get(Integer.parseInt(args[0])).solicitar((Player)sender);
+				Manager.itens.get(Integer.parseInt(args[0])).solicitar((Player)sender, args.length == 2 ? Integer.parseInt(args[1]) : 1);
 			}catch(NumberFormatException e){
 				sender.sendMessage("§cUse apenas números, /comprar <ID>, Ex: /comprar 2");
 			}catch (IndexOutOfBoundsException e) {
-				sender.sendMessage("§cProduto não encontrado");
+				sender.sendMessage("§cProduto não encontrado.");
 			}
 			
 		}

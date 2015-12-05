@@ -1,5 +1,5 @@
 name: VendaOnline
 main: me.jonasxpx.vo.VendaOnline
-version: 0.1-BT
+version: 0.2-BT
 commands:
     comprar:

@@ -24,16 +24,16 @@ public class Manager {
 	public static void loadConfig(FileConfiguration c){
 		itens = Lists.newArrayList();
 		
-		for(String key : c.getConfigurationSection("Itens").getKeys(false)){
-			itens.add(new Item(c.getString("Itens." + key + ".ID"),
-					c.getString("Itens." + key + ".Valor"),
-					ChatColor.translateAlternateColorCodes('&', c.getString("Itens." + key + ".Descricao")),
-					ChatColor.translateAlternateColorCodes('&', c.getString("Itens." + key + ".Texto")),
-					ChatColor.translateAlternateColorCodes('&', c.getString("Itens." + key + ".Nome")),
-					c.getBoolean("Itens." + key + ".Visivel")));
+		for(String key : c.getConfigurationSection("itens").getKeys(false)){
+			itens.add(new Item(c.getString("itens." + key + ".id"),
+					c.getString("itens." + key + ".valor"),
+					ChatColor.translateAlternateColorCodes('&', c.getString("itens." + key + ".descricao")),
+					ChatColor.translateAlternateColorCodes('&', c.getString("itens." + key + ".texto")),
+					ChatColor.translateAlternateColorCodes('&', c.getString("itens." + key + ".nome")),
+					c.getBoolean("itens." + key + ".visivel")));
 		}
 		try {
-			acc = new AccountCredentials(c.getString("PagSeguro.Email"), c.getString("PagSeguro.Token"));
+			acc = new AccountCredentials(c.getString("pagseguro.email"), c.getString("pagseguro.token"));
 		} catch (PagSeguroServiceException e) {e.printStackTrace();}
 	}
 	

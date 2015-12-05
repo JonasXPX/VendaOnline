@@ -1,11 +1,12 @@
-PagSeguro:
-   Email: seuemail@email.com
-   Token: TOKENDESEGURANÇA
-Itens:
+pagseguro:
+   email: seuemail@email.com
+   token: TOKENDESEGURANÇA
+defaultcmd: '/ativarvip <código>'
+itens:
    vip1:
-      ID: 003
-      Valor: 50.0
-      Nome: '&bVIPLite'
-      Descricao: '&4VIP LITE ESTA EM PROMOÇÃO'
-      Texto: 'Texto informatico, para labels'
-      Visivel: true
+      id: 003
+      valor: 50.0
+      nome: '&bVIPLite'
+      descricao: '&4VIP LITE ESTA EM PROMOÇÃO'
+      texto: 'Texto informatico, para labels'
+      visivel: true
