@@ -26,10 +26,11 @@ public class Manager {
 		
 		for(String key : c.getConfigurationSection("Itens").getKeys(false)){
 			itens.add(new Item(c.getString("Itens." + key + ".ID"),
-					c.getDouble("Itens." + key + ".Valor"),
+					c.getString("Itens." + key + ".Valor"),
 					ChatColor.translateAlternateColorCodes('&', c.getString("Itens." + key + ".Descricao")),
 					ChatColor.translateAlternateColorCodes('&', c.getString("Itens." + key + ".Texto")),
-					ChatColor.translateAlternateColorCodes('&', c.getString("Itens." + key + ".Nome"))));
+					ChatColor.translateAlternateColorCodes('&', c.getString("Itens." + key + ".Nome")),
+					c.getBoolean("Itens." + key + ".Visivel")));
 		}
 		try {
 			acc = new AccountCredentials(c.getString("PagSeguro.Email"), c.getString("PagSeguro.Token"));
@@ -41,7 +42,9 @@ public class Manager {
 		Collection<String> products = new ArrayList<String>();
 		int x = 0;
 		for(Item i : itens){
-			products.add("§7" + x + ". §6" + i.getNome() + " - Preço:§c " + NumberFormat.getInstance(Locale.forLanguageTag("pt-BR")).format(i.getValor()));
+			if(i.isVisible()){
+				products.add("§7" + x + ". §6" + i.getNome() + " - Preço:§c " + NumberFormat.getInstance(Locale.US).format(Double.parseDouble(i.getValor())));
+			}
 			x++;
 		}
 		return products;

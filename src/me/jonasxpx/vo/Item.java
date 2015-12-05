@@ -9,25 +9,27 @@ import br.com.uol.pagseguro.enums.Currency;
 
 public class Item {
 
-	private double valor;
+	private String valor;
 	private String descriçao;
 	private String id;
 	private String texto;
 	private String nome;
+	private boolean visivel;
 	
-	public Item(String id, double valor, String descriçao, String texto, String nome) {
+	public Item(String id, String valor, String descriçao, String texto, String nome, boolean visivel) {
 		this.valor = valor;
 		this.descriçao = descriçao;
 		this.id = id;
 		this.texto = texto;
 		this.nome = nome;
+		this.visivel = visivel;
 	}
 	
 	public String getInformation(){
 		return texto;
 	}
 	
-	public double getValor(){
+	public String getValor(){
 		return valor;
 	}
 	
@@ -36,6 +38,10 @@ public class Item {
 	}
 	public String getNome(){
 		return nome;
+	}
+	
+	public boolean isVisible(){
+		return visivel;
 	}
 	
 	public void solicitar(final Player player){
@@ -51,18 +57,19 @@ public class Item {
 					checkout.setCurrency(Currency.BRL);
 				    try {  
 				        String response = checkout.register(Manager.acc, false);  
-				        System.out.println("[PAGSEGURO] " + Utils.getDate() + " gerado link para pagamento em apelido de " + player.getName() + "LINK: " + response);
+				        System.out.println("[PAGSEGURO] " + Utils.getDate() + " gerado link para pagamento em apelido de " + player.getName() + " - LINK: " + response);
 				        System.out.println("[PAGSEGURO] " + Utils.getDate() + " IP do jogador " + player.getName() + ": " + player.getAddress().getAddress().toString());
-				        player.sendMessage("&7&m->--------------------------------------<-\n"
+				        player.sendMessage("§7§m->-------------------------------------------<-\n"
 				        		+ "\n"
-				        		+ "§b Prosiga com o pagamento no link abaixo\n§o"
+				        		+ "§b  Prossiga com o pagamento no link abaixo\n§o  "
 				        		+ Utils.urlParse(response) + "\n"
-				        				+ "§bVocê ira receber seu código junto com o email do PagSeguro\n"
-				        				+ "Para ativar use /ativarvip <código>\n"
+				        				+ "  §bVocê ira receber seu código junto com o email do PagSeguro\n"
+				        				+ "  §cPara ativar use /ativarvip <código>\n"
 				        				+ "\n"
-				        				+ "&7&m->--------------------------------------<-");
+				        				+ "§7§m->-------------------------------------------<-");
 				    } catch (Exception e) {  
 				          System.err.println(e.getMessage());  
+				          player.sendMessage("§cErro:" + e.getMessage());
 				    } 
 				}
 			}, "Thread Pagamento " + player.getName()).start();

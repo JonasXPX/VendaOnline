@@ -8,15 +8,4 @@ Itens:
       Nome: '&bVIPLite'
       Descricao: '&4VIP LITE ESTA EM PROMOÇÃO'
       Texto: 'Texto informatico, para labels'
-   vip2:
-      ID: 004
-      Valor: 10.0
-      Nome: '&bVIP Barato'
-      Descricao: '&4VIP Barato, para qualquer um'
-      Texto: 'Texto informatico, para labels'
-   vip3:
-      ID: 005
-      Valor: 150.0
-      Nome: '&bVIP HERO'
-      Descricao: '&4VIP HERO, Super itens'
-      Texto: 'Texto informatico, para labels'
+      Visivel: true

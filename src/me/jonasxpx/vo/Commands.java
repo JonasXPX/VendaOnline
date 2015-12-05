@@ -18,10 +18,17 @@ public class Commands implements CommandExecutor{
 		}
 		if(args.length >= 1){
 			try{
-			Manager.itens.get(Integer.parseInt(args[0])).solicitar((Player)sender);
+				if(!Manager.itens.get(Integer.parseInt(args[0])).isVisible()){
+					sender.sendMessage("§cProduto não encontrado");
+					return true;
+				}
+				Manager.itens.get(Integer.parseInt(args[0])).solicitar((Player)sender);
 			}catch(NumberFormatException e){
 				sender.sendMessage("§cUse apenas números, /comprar <ID>, Ex: /comprar 2");
+			}catch (IndexOutOfBoundsException e) {
+				sender.sendMessage("§cProduto não encontrado");
 			}
+			
 		}
 		return false;
 	}
