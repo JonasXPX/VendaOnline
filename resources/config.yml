@@ -1,11 +1,11 @@
 PagSeguro:
-   Email: seuemail@email.com //EMAIL DO PAGSEGURO
-   Token: TOKENDESEGURANÇA //TOKEN DA SUA CONTA PAGSEGURO
+   Email: seuemail@email.com #EMAIL DO PAGSEGURO
+   Token: TOKENDESEGURANÇA #TOKEN DA SUA CONTA PAGSEGURO
 Itens:
-   vip1: //LABEL DE IDENTIFICAÇÃO ITEM
-      ID: 003 //ID QUE VAI IDINTIFICAR O PRODUTO
-      Valor: 50.0 // VALOR DO PRODUTO, SEMPRE EM REAIS
-      Nome: '&bVIPLite' //NOME DO PRODUTO
-      Descricao: '&4VIP LITE ESTA EM PROMOÇÃO' //DESCRIÇÃO DO PRODUTO
-      Texto: 'Texto informatico, para labels' // NÃO DISPONÍVEL AINDA!
-      Visivel: true //ATIVAR OU DESATIVAR ?
+   vip1: #LABEL DE IDENTIFICAÇÃO ITEM
+      ID: 003 #ID QUE VAI IDINTIFICAR O PRODUTO
+      Valor: 50.0 #VALOR DO PRODUTO, SEMPRE EM REAIS
+      Nome: '&bVIPLite' #NOME DO PRODUTO
+      Descricao: '&4VIP LITE ESTA EM PROMOÇÃO' #DESCRIÇÃO DO PRODUTO
+      Texto: 'Texto informatico, para labels' # NÃO DISPONÍVEL AINDA!
+      Visivel: true #ATIVAR OU DESATIVAR ?
