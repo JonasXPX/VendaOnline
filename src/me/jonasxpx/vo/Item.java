@@ -71,5 +71,4 @@ public class Item {
 			}
 		}, "Thread Pagamento " + player.getName()).start();
 	}
-
 }

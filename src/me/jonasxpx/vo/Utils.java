@@ -20,7 +20,6 @@ public class Utils {
 		}
 		return null;
 	}
-	
 	public static String getDate(){
 		return new SimpleDateFormat("yyyy-MM-dd HH-mm").format(new Date());
 	}

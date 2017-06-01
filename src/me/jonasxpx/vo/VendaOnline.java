@@ -22,8 +22,6 @@ public class VendaOnline extends JavaPlugin{
 		getCommand("comprar").setExecutor(new Commands());
 	}
 	
-	
-	
 	public static Collection<Item> getItens(){
 		return Manager.itens;
 	}

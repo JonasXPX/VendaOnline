@@ -23,7 +23,6 @@ public class Manager {
 	
 	public static void loadConfig(FileConfiguration c){
 		itens = Lists.newArrayList();
-		
 		for(String key : c.getConfigurationSection("itens").getKeys(false)){
 			itens.add(new Item(c.getString("itens." + key + ".id"),
 					c.getString("itens." + key + ".valor"),
