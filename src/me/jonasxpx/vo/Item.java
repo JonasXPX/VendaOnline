@@ -2,6 +2,8 @@ package me.jonasxpx.vo;
 
 import java.math.BigDecimal;
 
+import javax.annotation.Nullable;
+
 import org.bukkit.entity.Player;
 
 import br.com.uol.pagseguro.domain.checkout.Checkout;

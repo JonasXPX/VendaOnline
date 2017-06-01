@@ -18,6 +18,7 @@ public class VendaOnline extends JavaPlugin{
 			saveConfig();
 		}
 		this.cmdToExecute = getConfig().getString("defaultcmd");
+
 		Manager.loadConfig(this.getConfig());
 		getCommand("comprar").setExecutor(new Commands());
 	}
